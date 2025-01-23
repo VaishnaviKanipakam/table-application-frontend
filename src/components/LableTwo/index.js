@@ -22,6 +22,11 @@ const initialCountrieslist = [
 	}
 ]
 
+
+// {newOptionsList.map(eachOption => {
+//   return (<option value={eachOption.country}>{eachOption.country}</option>)
+// })}
+
 export class LableTwo extends Component {
 constructor(props) {
   super(props)
@@ -42,44 +47,42 @@ handleMultiChange = (event) => {
 
 onSubmitForm = event => {
   event.preventDefault()
-  const {addOption, newOptionsList} = this.state
+  const {addOption} = this.state
  const newOption = {
   value: addOption,
   option: addOption
  }
 
-this.setState([...newOptionsList, newOption])
+this.setState(prevState => ({
+  newOptionsList: [...prevState.newOptionsList, newOption]
+}))
+console.log("59newoptionlist", newOption)
 }
 
   render() {
     const {addOption, newOptionsList}  = this.state
-    console.log("newOptionsList", newOptionsList)
+    console.log("62newOptionsList", newOptionsList)
     const {onButtonClicked} = this.props
     return (
       <form className='labletwo-container' onSubmit={this.onSubmitForm}>
        <h1 className='lable-two-heading'>Lable 2</h1>
        <hr className='line'/>
         <select className="select-options-container" onChange={this.handleMultiChange} multi>
-          {newOptionsList.map(eachOption => {
-               return (<option value={eachOption.country}>{eachOption.country}</option>)
-            })}  
+        {newOptionsList.map((eachOption) => (
+           <option value={eachOption.value}>{eachOption.country}</option>
+          ))}
         </select>
-           {onButtonClicked ? (
-            <>
-             <hr className='line'/>
-              <select className="select-options-container" onChange={this.handleMultiChange} multi>
-                  <option value="norway">Norway</option>
-                  <option value="pakistan">Pakistan</option>
-                  <option value="peru">Peru</option>
-                  <option value="colombia">Colombia</option>
-                  <option value='nigeria'>Nigeria</option>
-                  {newOptionsList.map(eachOption => (
-                    <option value={eachOption.value}>{eachOption.option}</option>
-                  ))}  
-              </select>
-            </>
-
-           ) : (null)}
+        {onButtonClicked ? (
+          <>
+          <hr className='line'/>
+          <select className="select-options-container" onChange={this.handleMultiChange} multi>
+              {newOptionsList.map((eachOption) => (
+                  <option value={eachOption.value}>{eachOption.country}</option>
+                ))}
+        </select>
+          </>
+        ) : (null)}
+      
 
         <div className='add-button-container'>
           <input className='option-input' value={addOption} type='text' onChange={this.oChangeOption}/>

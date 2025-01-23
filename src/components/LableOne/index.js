@@ -2,23 +2,23 @@ import React, { Component } from 'react'
 
 import './index.css'
 
-const initialCountrieslist = [
-	{
-		"country": "Nigeria"
-	},
-	{
-		"country": "Norway"
-	},
-	{
-		"country": "Pakistan"
-	},
-	{
-		"country": "Peru"
-	},
-	{
-		"country": "Colombia"
-	}
-]
+// const initialCountrieslist = [
+// 	{
+// 		"country": "Nigeria"
+// 	},
+// 	{
+// 		"country": "Norway"
+// 	},
+// 	{
+// 		"country": "Pakistan"
+// 	},
+// 	{
+// 		"country": "Peru"
+// 	},
+// 	{
+// 		"country": "Colombia"
+// 	}
+// ]
 
 export class LableOne extends Component {
     state = {
