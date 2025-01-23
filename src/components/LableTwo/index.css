@@ -1,0 +1,64 @@
+.labletwo-container{
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+    font-family: "Roboto";
+    box-sizing: border-box;
+    width: 100%;
+    height: 70vh;
+    border-left: 1px solid #808080;
+}
+
+.line{
+    width: 100%;
+    color: #808080;
+}
+
+.lable-two-heading{
+    color: #000000;
+    font-size: 20px;
+}
+
+.select-options-container{
+    width: 70%;
+    padding: 10px;
+    outline: none;
+    cursor: pointer;
+}
+
+.input{
+    width: 80%;
+}
+
+.add-button-container{
+    width: 65%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-top: 10px;
+  }
+
+.add-button{
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 12px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  margin-left: 10px;
+}
+
+.option-input{
+    padding: 8px;
+    outline: none;
+    cursor: pointer;
+}
